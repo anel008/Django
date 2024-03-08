@@ -12,3 +12,5 @@ def doctor(request):
     return render(request, 'doctor.html')
 def booking(request):
     return render(request, 'booking.html')
+def department(request):
+    return render(request,'department.html')

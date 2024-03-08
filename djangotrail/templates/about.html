@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
-</head>
-<body>
-    <h1>ABOUT PAGE</h1>
-    <p></p>
-</body>
-</html>
+{% extends "base.html" %}
+    {%block body%} 
+        <h1>ABOUT PAGE</h1> 
+    {%endblock%}
+
+    {%block "content"%}
+
+    {%if num1 < 0 %}
+        <h2> negative number</h2>
+    {%elif num1 > 0 %}
+        <h2>positive number</h2>
+    {% else %}
+        <h2>zero</h2>
+    {% endif %}
+
+    {%endblock%}
+

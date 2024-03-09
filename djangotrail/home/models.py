@@ -4,3 +4,9 @@ from django.db import models
 class Department(models.Model):
     dep_name = models.CharField(max_length=50)
     dep_description = models.TextField()
+
+class Doctor(models.Model):
+    doc_name = models.CharField( max_length=50)
+    doc_spec = models.CharField(max_length=100)
+    dep_name = models.ForeignKey(Department, on_delete = models.CASCADE)
+    doc_images = models.ImageField(upload_to= 'doctors', height_field=None, width_field=None, max_length=None)

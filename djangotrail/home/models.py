@@ -5,6 +5,9 @@ class Department(models.Model):
     dep_name = models.CharField(max_length=50)
     dep_description = models.TextField()
 
+    def __str__(self):
+        return self.dep_name
+
 class Doctor(models.Model):
     doc_name = models.CharField( max_length=50)
     doc_spec = models.CharField(max_length=100)

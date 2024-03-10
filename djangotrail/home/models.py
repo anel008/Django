@@ -13,3 +13,15 @@ class Doctor(models.Model):
     doc_spec = models.CharField(max_length=100)
     dep_name = models.ForeignKey(Department, on_delete = models.CASCADE)
     doc_images = models.ImageField(upload_to= 'doctors', height_field=None, width_field=None, max_length=None)
+
+    def __str__(self):
+        return + 'Dr' + self.doc_name + '-' + self.doc_spec
+
+class Booking(models.Model):
+    p_name = models.CharField(max_length=50)
+    p_phone = models.CharField(max_length = 10)
+    p_email = models.EmailField()
+    doc_name = models.ForeignKey(Department, on_delete = models.CASCADE)
+    booking_date = models.DateField()
+    booked_on = models.DateField(auto_now = True)
+    
